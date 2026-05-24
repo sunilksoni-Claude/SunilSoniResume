@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunil Soni — Director, AI - Data Analytics & Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392B;
+    --red-dark: #96281B;
+    --red-light: #E74C3C;
+    --dark: #1a1a1a;
+    --darker: #111;
+    --mid: #2c2c2c;
+    --light-text: #f0f0f0;
+    --muted: #aaa;
+    --accent-gold: #d4a853;
+    --card-bg: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+  }
+
+  [data-theme="light"] {
+    --red: #C0392B;
+    --red-dark: #96281B;
+    --red-light: #E74C3C;
+    --dark: #f5f5f5;
+    --darker: #ffffff;
+    --mid: #e8e8e8;
+    --light-text: #1a1a1a;
+    --muted: #666;
+    --accent-gold: #8B6914;
+    --card-bg: rgba(0,0,0,0.03);
+    --border: rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--darker);
+    color: var(--light-text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px 0 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--dark) 0%, #0d0d0d 50%, var(--red-dark) 150%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -120px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(192,57,43,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .hero-text h1 span { color: var(--red); }
+
+  .hero-text .subtitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .hero-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .hero-contact a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .hero-contact a:hover { color: var(--red-light); }
+
+  .hero-contact .loc {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-contact .loc::before {
+    content: '📍';
+    font-size: 0.85rem;
+  }
+
+  /* ─── LIGHT THEME OVERRIDES ─── */
+  [data-theme="light"] .hero {
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 50%, #fdf0ee 100%);
+  }
+
+  [data-theme="light"] .hero::before {
+    background: radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%);
+  }
+
+  [data-theme="light"] .tag:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  [data-theme="light"] .tag-outline {
+    background: rgba(0,0,0,0.04);
+  }
+
+  [data-theme="light"] .tag-accent {
+    background: rgba(192,57,43,0.06);
+    border-color: rgba(192,57,43,0.15);
+  }
+
+  [data-theme="light"] .competency-list li:hover {
+    background: rgba(192,57,43,0.04);
+  }
+
+  [data-theme="light"] .exp-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+
+  [data-theme="light"] .summary-text {
+    color: #444;
+  }
+
+  [data-theme="light"] .exp-bullets li {
+    color: #444;
+  }
+
+  [data-theme="light"] .exp-dates {
+    background: rgba(139,105,20,0.08);
+    border-color: rgba(139,105,20,0.2);
+  }
+
+  [data-theme="light"] .timeline-item:hover {
+    background: rgba(192,57,43,0.03);
+  }
+
+  [data-theme="light"] .timeline-item::before {
+    border-color: #fff;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar { display: flex; flex-direction: column; gap: 36px; }
+
+  .sidebar-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .tag-red {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .tag-outline {
+    border: 1px solid var(--border);
+    color: var(--light-text);
+    background: var(--card-bg);
+  }
+
+  .tag-accent {
+    background: rgba(192,57,43,0.12);
+    color: var(--red-light);
+    border: 1px solid rgba(192,57,43,0.25);
+  }
+
+  .competency-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .competency-list li {
+    font-size: 0.88rem;
+    color: var(--light-text);
+    padding: 8px 12px;
+    background: var(--card-bg);
+    border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .competency-list li:hover {
+    background: rgba(192,57,43,0.08);
+    transform: translateX(4px);
+  }
+
+  .education-block {
+    margin-bottom: 18px;
+  }
+
+  .education-block .degree {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--light-text);
+  }
+
+  .education-block .field {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .education-block .school {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .education-block .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--red);
+    margin-top: 2px;
+  }
+
+  /* ─── MAIN ─── */
+  .main { display: flex; flex-direction: column; gap: 44px; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--red), transparent);
+  }
+
+  .summary-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #d4d4d4;
+    border-left: 3px solid var(--red);
+    padding-left: 20px;
+    background: var(--card-bg);
+    padding: 20px 24px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ─── EXPERIENCE CARD ─── */
+  .exp-card {
+    position: relative;
+    padding: 28px 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .exp-card:hover {
+    border-color: rgba(192,57,43,0.3);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .exp-company {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--red);
+  }
+
+  .exp-dates {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent-gold);
+    background: rgba(212,168,83,0.1);
+    border: 1px solid rgba(212,168,83,0.2);
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .exp-role {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin-bottom: 2px;
+  }
+
+  .exp-location {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exp-bullets li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #ccc;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+
+  /* ─── TIMELINE (early career) ─── */
+  .timeline {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .timeline-item {
+    flex: 1;
+    min-width: 180px;
+    padding: 20px 16px;
+    background: var(--card-bg);
+    border-right: 1px solid var(--border);
+    position: relative;
+    transition: background 0.3s;
+    text-align: center;
+  }
+
+  .timeline-item:last-child { border-right: none; }
+
+  .timeline-item:hover { background: rgba(192,57,43,0.06); }
+
+  .timeline-item::before {
+    content: '';
+    display: block;
+    width: 12px; height: 12px;
+    background: var(--red);
+    border: 3px solid var(--dark);
+    border-radius: 50%;
+    margin: 0 auto 12px;
+  }
+
+  .timeline-item .tl-dates {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item .tl-role {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--light-text);
+    line-height: 1.3;
+  }
+
+  .timeline-item .tl-dept {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 30px 40px;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .footer span { color: var(--red); margin: 0 10px; }
+
+  /* ─── PRINT ─── */
+  .print-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(192,57,43,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .print-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(192,57,43,0.6);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 30px 20px 60px;
+    }
+    .hero-inner { padding: 0 20px; flex-direction: column; align-items: flex-start; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-contact { align-items: flex-start; }
+    .exp-header { flex-direction: column; }
+    .timeline { flex-direction: column; }
+    .timeline-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .timeline-item:last-child { border-bottom: none; }
+  }
+
+  /* ─── THEME TOGGLE ─── */
+  .theme-toggle {
+    position: fixed;
+    bottom: 28px;
+    right: 90px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--light-text);
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+  }
+
+  @media print {
+    body { background: #fff; color: #222; }
+    .print-btn, .theme-toggle { display: none; }
+    .hero { background: #fff !important; min-height: auto; padding: 30px 0 20px; }
+    .hero::before, .hero::after { display: none; }
+    .hero-text h1 { color: #222; }
+    .hero-text h1 span { color: var(--red); }
+    .container { gap: 30px; }
+    .exp-card { border: 1px solid #ddd; box-shadow: none !important; background: #fff; }
+    .exp-bullets li { color: #333 !important; }
+    .summary-text { color: #333 !important; background: #f9f9f9; }
+    .competency-list li { background: #f5f5f5; color: #222; }
+    .sidebar-section h3 { color: var(--red); }
+    .tag-outline { border-color: #ccc; color: #222; background: #f5f5f5; }
+    .tag-accent { color: var(--red); background: #fef5f5; }
+    .footer { color: #999; }
+    .timeline-item { background: #fafafa; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="subtitle">Director, AI - Data Analytics & Engineering</div>
+      <h1>SUNIL <span>SONI</span></h1>
+    </div>
+    <div class="hero-contact">
+      <div class="loc">Powell, OH</div>
+      <a href="mailto:sunilksoni@gmail.com">sunilksoni@gmail.com</a>
+      <a href="https://linkedin.com/in/sunil-soni-8b72472" target="_blank">linkedin.com/in/sunil-soni-8b72472</a>
+    </div>
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section animate-in">
+      <h3>Strengths</h3>
+      <div class="tag-list">
+        <span class="tag tag-red">Strategic</span>
+        <span class="tag tag-red">Restorative</span>
+        <span class="tag tag-red">Achiever</span>
+        <span class="tag tag-red">Responsibility</span>
+        <span class="tag tag-red">Individualization</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section animate-in">
+      <h3>Core Competencies</h3>
+      <ul class="competency-list">
+        <li>Context Aware AI Engineering</li>
+        <li>AI Agents</li>
+        <li>Data Engineering</li>
+        <li>Data Analytics</li>
+        <li>Data Integration</li>
+        <li>Project Management</li>
+        <li>Vendor Management</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section animate-in">
+      <h3>Leadership Style</h3>
+      <div class="tag-list">
+        <span class="tag tag-accent">Transformational</span>
+        <span class="tag tag-accent">Visionary</span>
+        <span class="tag tag-accent">Democratic</span>
+        <span class="tag tag-accent">Servant</span>
+        <span class="tag tag-accent">Situational</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section animate-in">
+      <h3>Technologies</h3>
+      <div class="tag-list">
+        <span class="tag tag-outline">Google BigQuery</span>
+        <span class="tag tag-outline">SAP HANA</span>
+        <span class="tag tag-outline">Alteryx</span>
+        <span class="tag tag-outline">Python</span>
+        <span class="tag tag-outline">Tableau</span>
+        <span class="tag tag-outline">Business Objects</span>
+        <span class="tag tag-outline">LLM</span>
+        <span class="tag tag-outline">DataBricks</span>
+        <span class="tag tag-outline">SQL</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section animate-in">
+      <h3>Education</h3>
+      <div class="education-block">
+        <div class="degree">Master of Science</div>
+        <div class="field">Physics</div>
+        <div class="school">MS University, INDIA</div>
+        <div class="year">1997</div>
+      </div>
+      <div class="education-block">
+        <div class="degree">Bachelor of Science</div>
+        <div class="field">Physics</div>
+        <div class="school">MS University, INDIA</div>
+        <div class="year">1995</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- Executive Summary -->
+    <section class="animate-in">
+      <div class="section-title">Executive Summary</div>
+      <div class="summary-text">
+        Accomplished AI, Data Analytics & Engineering Leader with 20+ years of experience driving high-impact analytics, AI adoption, and data solutions at scale. Proven track record directing a 50+ member global team at Cardinal Health, architecting AI Art of the possible frameworks, building agent ecosystems across GMPD and Digital Solutions, and modernizing legacy platforms to cloud-native architectures. Recognized for strategic transformation, converting AI's potential into measurable business outcomes, mentoring talent, and partnering across business domains to deliver actionable insights.
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="animate-in">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- Cardinal Health - Director -->
+      <div class="exp-card animate-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Cardinal Health</div>
+            <div class="exp-role">Director, AI, Data Analytics & Engineering</div>
+            <div class="exp-location">📍 Dublin, OH</div>
+          </div>
+          <div class="exp-dates">Mar' 24 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Spearheading GMPD & Digital Solutions wide AI upskilling initiative through Project Prometheus, ensuring every team member gains hands-on exposure to AI's "art of the possible" through structured learning paths, live demos, and embedded AI workflows.</li>
+          <li>Directing the "Smart RFP Agent" project, an AI-powered intelligent agent that automates proposal response workflows, demonstrating AI's capacity to deliver direct business value beyond operational efficiency.</li>
+          <li>Initiated AI-native data engineering practices, integrating generative AI into build automation, testing, and documentation pipelines—driving measurable gains in development velocity and code quality.</li>
+          <li>Influencing GMPD & Digital Solutions wide AI adoption strategy for efficiency and productivity, evangelizing AI-first approaches to senior leadership, cross-functional teams, and vendor partners to accelerate enterprise transformation.</li>
+          <li>Building strong stakeholder relationships, partnering with senior leadership to align analytics programs with organizational goals, compliance standards, and business priorities.</li>
+          <li>Developing and mentoring emerging leaders, driving high performance, innovation, and accountability while enhancing leadership presence, communication, and global collaboration skills.</li>
+          <li>Orchestrating a major platform rationalization initiative, AI-driven migrating SAP HANA and Alteryx workloads to Google BigQuery to eliminate technical debt and significantly reduce data estate costs.</li>
+        </ul>
+      </div>
+
+      <!-- Cardinal Health - Sr. Manager -->
+      <div class="exp-card animate-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Cardinal Health</div>
+            <div class="exp-role">Sr. Manager, Data & Analytics Management</div>
+            <div class="exp-location">📍 Dublin, OH</div>
+          </div>
+          <div class="exp-dates">Feb' 20 – Mar' 24</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed USMPD Commercial Sales Analytics initiatives that play pivotal role in the Medical Sales Improvement plan, collaborating with Acute and Non-Acute Sales leadership to deliver analysis and reporting solutions.</li>
+          <li>Lead a substantial team in both USA and India, comprising diverse skill sets such as Data Engineering, Data Analytics, and operational support capability from vendor with MSA.</li>
+          <li>Spearheaded the implementation of the innovative Commercial Analytics Review Board (CARB) process, which accelerated the development of Durable Analytics Products and improved overall efficiency.</li>
+          <li>Pioneered 'DigiGuard,' a Digital Worker solution that proactively detects data anomalies in business analytics, shifting support from reactive to proactive and improving data integrity and decision-making.</li>
+        </ul>
+      </div>
+
+      <!-- Huntington -->
+      <div class="exp-card animate-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Huntington Bancshare</div>
+            <div class="exp-role">Sr. Manager, Enterprise DataWarehouse</div>
+            <div class="exp-location">📍 Easton, OH</div>
+          </div>
+          <div class="exp-dates">Apr' 19 – Jan' 20</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed large Data Integration and Enterprise Data Warehouse initiatives including a global team responsible for support of 15,000+ ETL jobs.</li>
+          <li>Lead cross-functional project teams and collaborated with business partners to determine and translate business requirements into technology and training solutions.</li>
+        </ul>
+      </div>
+
+      <!-- Chase -->
+      <div class="exp-card animate-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Chase</div>
+            <div class="exp-role">VP, Big Data & Business Intelligence</div>
+            <div class="exp-location">📍 Lewis Center, OH</div>
+          </div>
+          <div class="exp-dates">Dec' 17 – Apr' 19</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Architected a high-scale fraud risk platform processing 20B rows daily; integrated 22+ data sources via Informatica into Hadoop, Exadata, and Teradata for real-time insights.</li>
+          <li>Spearheaded Global BI testing and defect remediation, boosting overall system performance and stability by 20%.</li>
+        </ul>
+      </div>
+
+      <!-- Early Career Timeline -->
+      <div class="animate-in">
+        <div class="exp-company" style="margin-bottom:14px; font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--red);">Cardinal Health — Early Career</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-dates">July '05 – May '10</div>
+            <div class="tl-role">Development Lead</div>
+            <div class="tl-dept">Data Analytics</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dates">May '10 – Sep '12</div>
+            <div class="tl-role">Supervisor</div>
+            <div class="tl-dept">Data Analytics</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dates">Oct '12 – Apr '15</div>
+            <div class="tl-role">Delivery Manager</div>
+            <div class="tl-dept">InfoSphere Upgrade</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dates">Apr '15 – Dec '17</div>
+            <div class="tl-role">Manager</div>
+            <div class="tl-dept">eComm App Dev</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  CONFIDENTIAL <span>|</span> SUNIL SONI <span>|</span> POWELL, OH
+</footer>
+
+<!-- PRINT BUTTON -->
+<button class="print-btn" onclick="window.print()" title="Print / Save as PDF">🖨️</button>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">🌙</button>
+
+<script>
+  // Theme toggle
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+  toggle.textContent = saved === 'light' ? '☀️' : '🌙';
+
+  toggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    toggle.textContent = next === 'light' ? '☀️' : '🌙';
+    localStorage.setItem('theme', next);
+  });
+
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
